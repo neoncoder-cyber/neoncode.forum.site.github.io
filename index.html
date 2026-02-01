@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonCode Kanal Forum Sitesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>NeonCode Kanal Forum Sitesi</h1>
+        <nav>
+            <button id="homeBtn">Ana Sayfa</button>
+            <button id="newTopicBtn">Yeni Konu</button>
+            <button id="aiChatBtn">AI Sohbet</button>
+            <button id="loginBtn">Google ile Giriş</button>
+            <button id="logoutBtn" style="display:none;">Çıkış</button>
+        </nav>
+        <div id="userInfo" style="display:none; margin-top:0.5rem; font-size:0.9rem;"></div>
+    </header>
+
+    <div id="neonAIFloat" class="neon-ai-float">
+        <img src="AI-logo.png" alt="NeonAI" class="neon-ai-logo">
+        <div class="neon-ai-bubble">Merhaba! NeonAI'yım, yardımcı olmamı ister misin?</div>
+    </div>
+
+    <main id="mainContent">
+        <div id="forumList" class="forum-container">
+            <h2>Konular</h2>
+            <select id="categoryFilter">
+                <option value="">Tüm Kategoriler</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="teknoloji">Teknoloji</option>
+                <option value="genel">Genel</option>
+            </select>
+            <div id="topicsList"></div>
+        </div>
+
+        <div id="topicView" class="forum-container" style="display: none;">
+            <button id="backBtn">← Geri</button>
+            <div id="topicContent"></div>
+            <div id="repliesList"></div>
+            <div id="replyForm">
+                <h3>Yanıt Yaz</h3>
+                <textarea id="replyText" placeholder="Yanıtınızı yazın..." rows="4"></textarea>
+                <button id="submitReply">Gönder</button>
+            </div>
+        </div>
+
+        <div id="newTopicForm" class="forum-container" style="display: none;">
+            <h2>Yeni Konu Oluştur</h2>
+            <input type="text" id="topicTitle" placeholder="Konu Başlığı">
+            <textarea id="topicMessage" placeholder="Mesajınızı yazın..." rows="6"></textarea>
+            <button id="submitTopic">Gönder</button>
+            <button id="cancelTopic">İptal</button>
+        </div>
+
+        <div id="aiChat" class="forum-container" style="display: none;">
+            <h2>NeonAI Asistan</h2>
+            <div id="aiChatHistory" class="chat-history"></div>
+            <div class="chat-input-container">
+                <input type="text" id="aiMessageInput" placeholder="Mesajınızı yazın..." class="chat-input">
+                <button id="aiSendBtn" class="chat-send-btn">Gönder</button>
+            </div>
+            <button id="backBtnFromChat">← Geri</button>
+        </div>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
